@@ -177,14 +177,14 @@ export default function Sidebar({ variant = 'default' }) {
                                                     className={`pl-8 mt-1 ${!open && 'hidden'}`}
                                                 >
                                                     <li className="mb-1 last:mb-0">
-                                                        <SidebarLink href="/setting/company">
+                                                        <SidebarLink href="/settings/company">
                                                             <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                                                 Empresa
                                                             </span>
                                                         </SidebarLink>
                                                     </li>
                                                     <li className="mb-1 last:mb-0">
-                                                        <SidebarLink href="/setting/zones">
+                                                        <SidebarLink href="/settings/zones">
                                                             <span className="text-sm font-medium lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
                                                                 Zonas
                                                             </span>
