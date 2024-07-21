@@ -34,19 +34,15 @@ export default function AccountPanel() {
                 {/* Business Profile */}
                 <section>
                     <h2 className="text-xl leading-snug text-gray-800 dark:text-gray-100 font-bold mb-1">
-                        Business Profile
+                        Perfil del negocio
                     </h2>
-                    <div className="text-sm">
-                        Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit.
-                    </div>
                     <div className="sm:flex sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-5">
                         <div className="sm:w-1/3">
                             <label
                                 className="block text-sm font-medium mb-1"
                                 htmlFor="name"
                             >
-                                Business Name
+                                Razón social
                             </label>
                             <input
                                 id="name"
@@ -59,7 +55,7 @@ export default function AccountPanel() {
                                 className="block text-sm font-medium mb-1"
                                 htmlFor="business-id"
                             >
-                                Business ID
+                                Registro único de contribuyente (RUC)
                             </label>
                             <input
                                 id="business-id"
@@ -72,7 +68,7 @@ export default function AccountPanel() {
                                 className="block text-sm font-medium mb-1"
                                 htmlFor="location"
                             >
-                                Location
+                                Tipo contribuyente
                             </label>
                             <input
                                 id="location"
@@ -81,80 +77,147 @@ export default function AccountPanel() {
                             />
                         </div>
                     </div>
-                </section>
-                {/* Email */}
-                <section>
-                    <h2 className="text-xl leading-snug text-gray-800 dark:text-gray-100 font-bold mb-1">
-                        Email
-                    </h2>
-                    <div className="text-sm">
-                        Excepteur sint occaecat cupidatat non proident sunt in
-                        culpa qui officia.
-                    </div>
-                    <div className="flex flex-wrap mt-5">
-                        <div className="mr-2">
-                            <label className="sr-only" htmlFor="email">
-                                Business email
+                    <div className="sm:flex sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-5">
+                        <div className="sm:w-1/3">
+                            <label
+                                className="block text-sm font-medium mb-1"
+                                htmlFor="name"
+                            >
+                                Régimen
                             </label>
                             <input
-                                id="email"
-                                className="form-input"
+                                id="name"
+                                className="form-input w-full"
+                                type="text"
+                            />
+                        </div>
+                        <div className="sm:w-1/3">
+                            <label
+                                className="block text-sm font-medium mb-1"
+                                htmlFor="name"
+                            >
+                                Obligado a llevar contabilidad
+                            </label>
+                            <input
+                                id="name"
+                                className="form-input w-full"
+                                type="text"
+                            />
+                        </div>
+                        <div className="sm:w-1/3">
+                            <label
+                                className="block text-sm font-medium mb-1"
+                                htmlFor="name"
+                            >
+                                Agente de retención
+                            </label>
+                            <input
+                                id="name"
+                                className="form-input w-full"
+                                type="text"
+                            />
+                        </div>
+                    </div>
+                    <div className="sm:flex sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-5">
+                        <div className="sm:w-1/3">
+                            <label
+                                className="block text-sm font-medium mb-1"
+                                htmlFor="name"
+                            >
+                                Contribuyente especial N°
+                            </label>
+                            <input
+                                id="name"
+                                className="form-input w-full"
+                                type="text"
+                                defaultValue={0}
+                            />
+                        </div>
+                    </div>
+                </section>
+                {/* Establecimiento */}
+                <section>
+                    <h2 className="text-xl leading-snug text-gray-800 dark:text-gray-100 font-bold mb-1">
+                        Establecimiento
+                    </h2>
+                    <div className="text-sm">
+                        Datos del establecimiento registrados en el SRI.
+                    </div>
+                    <div className="sm:flex sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-5">
+                        <div className="sm:w-1/3">
+                            <label
+                                className="block text-sm font-medium mb-1"
+                                htmlFor="name"
+                            >
+                                No. establecimiento
+                            </label>
+                            <input
+                                id="name"
+                                className="form-input w-full"
+                                type="text"
+                                defaultValue="001"
+                            />
+                        </div>
+                        <div className="sm:w-1/3">
+                            <label
+                                className="block text-sm font-medium mb-1"
+                                htmlFor="name"
+                            >
+                                Nombre comercial
+                            </label>
+                            <input
+                                id="name"
+                                className="form-input w-full"
+                                type="text"
+                            />
+                        </div>
+                        <div className="sm:w-1/3">
+                            <label
+                                className="block text-sm font-medium mb-1"
+                                htmlFor="name"
+                            >
+                                Ubicación de establecimiento
+                            </label>
+                            <input
+                                id="name"
+                                className="form-input w-full"
+                                type="text"
+                            />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h2 className="text-xl leading-snug text-gray-800 dark:text-gray-100 font-bold mb-1">
+                        Contacto
+                    </h2>
+                    <div className="sm:flex sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-5">
+                        <div className="sm:w-1/3">
+                            <label
+                                className="block text-sm font-medium mb-1"
+                                htmlFor="name"
+                            >
+                                Correo Electrónico
+                            </label>
+                            <input
+                                id="name"
+                                className="form-input w-full"
                                 type="email"
                             />
                         </div>
-                        <button className="btn dark:bg-gray-800 border-gray-200 dark:border-gray-700/60 hover:border-gray-300 dark:hover:border-gray-600 text-gray-800 dark:text-gray-300">
-                            Change
-                        </button>
                     </div>
-                </section>
-                {/* Password */}
-                <section>
-                    <h2 className="text-xl leading-snug text-gray-800 dark:text-gray-100 font-bold mb-1">
-                        Password
-                    </h2>
-                    <div className="text-sm">
-                        You can set a permanent password if you don not want to
-                        use temporary login codes.
-                    </div>
-                    <div className="mt-5">
-                        <button className="btn dark:bg-gray-800 border-gray-200 dark:border-gray-700/60 hover:border-gray-300 dark:hover:border-gray-600 text-gray-800 dark:text-gray-300">
-                            Set New Password
-                        </button>
-                    </div>
-                </section>
-                {/* Smart Sync */}
-                <section>
-                    <h2 className="text-xl leading-snug text-gray-800 dark:text-gray-100 font-bold mb-1">
-                        Smart Sync update for Mac
-                    </h2>
-                    <div className="text-sm">
-                        With this update, online-only files will no longer
-                        appear to take up hard drive space.
-                    </div>
-                    <div className="flex items-center mt-5">
-                        <div className="form-switch">
-                            <input
-                                type="checkbox"
-                                id="toggle"
-                                className="sr-only"
-                                checked={sync}
-                                onChange={() => setSync(!sync)}
-                            />
+                    <div className="sm:flex sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-5">
+                        <div className="sm:w-1/3">
                             <label
-                                className="bg-gray-400 dark:bg-gray-700"
-                                htmlFor="toggle"
+                                className="block text-sm font-medium mb-1"
+                                htmlFor="name"
                             >
-                                <span
-                                    className="bg-white shadow-sm"
-                                    aria-hidden="true"
-                                ></span>
-                                <span className="sr-only">
-                                    Enable smart sync
-                                </span>
+                                Whatsapp
                             </label>
-                        </div>
-                        <div className="text-sm text-gray-400 dark:text-gray-500 italic ml-2">
-                            {sync ? 'On' : 'Off'}
+                            <input
+                                id="name"
+                                className="form-input w-full"
+                                type="text"
+                            />
                         </div>
                     </div>
                 </section>

@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from 'react'
 import { useAppProvider } from '@/app/app-provider'
 import { useSelectedLayoutSegments } from 'next/navigation'
 import { Transition } from '@headlessui/react'
-import { getBreakpoint } from '@/components/utils/utils'
-import Logo from '@/components/ui/logo'
-import SidebarLinkGroup from '@/components/ui/sidebar-link-group'
-import SidebarLink from '@/components/ui/sidebar-link'
+import { getBreakpoint } from '../utils/utils'
+import SidebarLinkGroup from './sidebar-link-group'
+import SidebarLink from './sidebar-link'
+import Logo from './logo'
 
 export default function Sidebar({ variant = 'default' }) {
     const sidebar = useRef(null)
@@ -100,12 +100,13 @@ export default function Sidebar({ variant = 'default' }) {
                         </svg>
                     </button>
                     {/* Logo */}
-                    <p>JAAPEC</p>
+                    <Logo />
+                    <span>JAAP EC</span>
                 </div>
 
                 {/* Links */}
                 <div className="space-y-8">
-                    {/* Administrator group */}
+                    {/* Pages group */}
                     <div>
                         <h3 className="text-xs uppercase text-gray-400 dark:text-gray-500 font-semibold pl-3">
                             <span
@@ -115,12 +116,122 @@ export default function Sidebar({ variant = 'default' }) {
                                 •••
                             </span>
                             <span className="lg:hidden lg:sidebar-expanded:block 2xl:block">
-                                Administrador
+                                Pages
                             </span>
                         </h3>
                         <ul className="mt-3">
+                            <li
+                                className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('dashboard') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}
+                            >
+                                <SidebarLink href="/dashboard">
+                                    <div className="flex items-center">
+                                        <svg
+                                            className={`shrink-0 fill-current ${segments.includes('dashboard') ? 'text-violet-500' : 'text-gray-400 dark:text-gray-500'}`}
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="1em"
+                                            height="1em"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <g
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                            >
+                                                <path d="M5 12H3l9-9l9 9h-2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" />
+                                                <path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6" />
+                                            </g>
+                                        </svg>
+                                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                            Inicio
+                                        </span>
+                                    </div>
+                                </SidebarLink>
+                            </li>
+                            <li
+                                className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('transactions') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}
+                            >
+                                <SidebarLink href="/transactions">
+                                    <div className="flex items-center">
+                                        <svg
+                                            className={`shrink-0 fill-current ${segments.includes('transactions') ? 'text-violet-500' : 'text-gray-400 dark:text-gray-500'}`}
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="1em"
+                                            height="1em"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                fill="currentColor"
+                                                d="M4 20V7.1L2.05 2.85L3.85 2L6.2 7.05h11.6L20.15 2l1.8.85L20 7.1V20zm6-7h4q.425 0 .713-.288T15 12t-.288-.712T14 11h-4q-.425 0-.712.288T9 12t.288.713T10 13m-4 5h12V9.05H6zm0 0V9.05z"
+                                            />
+                                        </svg>
+                                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                            Transacciones
+                                        </span>
+                                    </div>
+                                </SidebarLink>
+                            </li>
+                            <li
+                                className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('connections') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}
+                            >
+                                <SidebarLink href="/connections">
+                                    <div className="flex items-center">
+                                        <svg
+                                            className={`shrink-0 fill-current ${segments.includes('connections') ? 'text-violet-500' : 'text-gray-400 dark:text-gray-500'}`}
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 256 256"
+                                        >
+                                            <path
+                                                fill="currentColor"
+                                                d="M232 112h-96V88h8a16 16 0 0 0 16-16V40a16 16 0 0 0-16-16h-32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h8v24H24a8 8 0 0 0 0 16h32v32h-8a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16h-8v-32h112v32h-8a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16h-8v-32h32a8 8 0 0 0 0-16M112 40h32v32h-32ZM80 208H48v-32h32Zm128 0h-32v-32h32Z"
+                                            />
+                                        </svg>
+                                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                            Acometidas
+                                        </span>
+                                    </div>
+                                </SidebarLink>
+                            </li>
+                            {/* Campaigns */}
+                            <li
+                                className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('rates') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}
+                            >
+                                <SidebarLink href="/rates">
+                                    <div className="flex items-center">
+                                        <svg
+                                            className={`shrink-0 fill-current ${segments.includes('rates') ? 'text-violet-500' : 'text-gray-400 dark:text-gray-500'}`}
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <g
+                                                fill="none"
+                                                stroke="currentColor"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                            >
+                                                <circle
+                                                    cx="16"
+                                                    cy="16"
+                                                    r="10"
+                                                />
+                                                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8m4 2V6" />
+                                            </g>
+                                        </svg>
+                                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                            Tarifas
+                                        </span>
+                                    </div>
+                                </SidebarLink>
+                            </li>
+                            {/* Settings */}
                             <SidebarLinkGroup
-                                open={segments.includes('administrador')}
+                                open={segments.includes('settings')}
                             >
                                 {(handleClick, open) => {
                                     return (
@@ -129,7 +240,7 @@ export default function Sidebar({ variant = 'default' }) {
                                                 href="#0"
                                                 className={`block text-gray-800 dark:text-gray-100 truncate transition ${
                                                     segments.includes(
-                                                        'dashboard'
+                                                        'settings'
                                                     )
                                                         ? ''
                                                         : 'hover:text-gray-900 dark:hover:text-white'
@@ -146,7 +257,7 @@ export default function Sidebar({ variant = 'default' }) {
                                                 <div className="flex items-center justify-between">
                                                     <div className="flex items-center">
                                                         <svg
-                                                            className={`shrink-0 fill-current ${segments.includes('dashboard') ? 'text-violet-500' : 'text-gray-400 dark:text-gray-500'}`}
+                                                            className={`shrink-0 fill-current ${segments.includes('settings') ? 'text-violet-500' : 'text-gray-400 dark:text-gray-500'}`}
                                                             xmlns="http://www.w3.org/2000/svg"
                                                             width="16"
                                                             height="16"
@@ -196,39 +307,30 @@ export default function Sidebar({ variant = 'default' }) {
                                     )
                                 }}
                             </SidebarLinkGroup>
-                            <li
-                                className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('messages') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}
-                            >
-                                <SidebarLink href="/users">
-                                    <div className="flex items-center justify-between">
-                                        <div className="grow flex items-center">
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                width="1em"
-                                                height="1em"
-                                                viewBox="0 0 24 24"
-                                            >
-                                                <g
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                                                    <circle
-                                                        cx="9"
-                                                        cy="7"
-                                                        r="4"
-                                                    />
-                                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87m-3-12a4 4 0 0 1 0 7.75" />
-                                                </g>
-                                            </svg>
-                                            <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
-                                                Usuarios
-                                            </span>
-                                        </div>
-                                    </div>
-                                </SidebarLink>
-                            </li>
                         </ul>
+                    </div>
+                </div>
+
+                {/* Expand / collapse button */}
+                <div className="pt-3 hidden lg:inline-flex 2xl:hidden justify-end mt-auto">
+                    <div className="w-12 pl-4 pr-3 py-2">
+                        <button
+                            className="text-gray-400 hover:text-gray-500 dark:text-gray-500 dark:hover:text-gray-400"
+                            onClick={() => setSidebarExpanded(!sidebarExpanded)}
+                        >
+                            <span className="sr-only">
+                                Expand / collapse sidebar
+                            </span>
+                            <svg
+                                className="shrink-0 fill-current text-gray-400 dark:text-gray-500 sidebar-expanded:rotate-180"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 16 16"
+                            >
+                                <path d="M15 16a1 1 0 0 1-1-1V1a1 1 0 1 1 2 0v14a1 1 0 0 1-1 1ZM8.586 7H1a1 1 0 1 0 0 2h7.586l-2.793 2.793a1 1 0 1 0 1.414 1.414l4.5-4.5A.997.997 0 0 0 12 8.01M11.924 7.617a.997.997 0 0 0-.217-.324l-4.5-4.5a1 1 0 0 0-1.414 1.414L8.586 7M12 7.99a.996.996 0 0 0-.076-.373Z" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </Transition>
