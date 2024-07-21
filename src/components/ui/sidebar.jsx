@@ -173,6 +173,29 @@ export default function Sidebar({ variant = 'default' }) {
                                 </SidebarLink>
                             </li>
                             <li
+                                className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('owners') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}
+                            >
+                                <SidebarLink href="/owners">
+                                    <div className="flex items-center">
+                                        <svg
+                                            className={`shrink-0 fill-current ${segments.includes('owners') ? 'text-violet-500' : 'text-gray-400 dark:text-gray-500'}`}
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="1em"
+                                            height="1em"
+                                            viewBox="0 0 256 256"
+                                        >
+                                            <path
+                                                fill="currentColor"
+                                                d="M234.38 210a123.36 123.36 0 0 0-60.78-53.23a76 76 0 1 0-91.2 0A123.36 123.36 0 0 0 21.62 210a12 12 0 1 0 20.77 12c18.12-31.32 50.12-50 85.61-50s67.49 18.69 85.61 50a12 12 0 0 0 20.77-12M76 96a52 52 0 1 1 52 52a52.06 52.06 0 0 1-52-52"
+                                            />
+                                        </svg>
+                                        <span className="text-sm font-medium ml-4 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">
+                                            Propietarios
+                                        </span>
+                                    </div>
+                                </SidebarLink>
+                            </li>
+                            <li
                                 className={`pl-4 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] ${segments.includes('connections') && 'from-violet-500/[0.12] dark:from-violet-500/[0.24] to-violet-500/[0.04]'}`}
                             >
                                 <SidebarLink href="/connections">

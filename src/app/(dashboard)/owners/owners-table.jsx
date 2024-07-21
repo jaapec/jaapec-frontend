@@ -1,6 +1,6 @@
-import ConnectionsTableItem from '@/app/(dashboard)/connections/connections-table-Item'
+import OwnersTableItem from '@/app/(dashboard)/owners/owners-table-Item'
 
-const ConnectionsTable = ({ connections }) => {
+const OwnersTable = ({ owners }) => {
     return (
         <div className="bg-white dark:bg-gray-800 shadow-sm rounded-xl relative">
             <header className="px-5 py-4">
@@ -24,12 +24,32 @@ const ConnectionsTable = ({ connections }) => {
                                 </th>
                                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                                     <div className="font-semibold text-left">
+                                        Tipo de Identificación
+                                    </div>
+                                </th>
+                                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
+                                    <div className="font-semibold text-left">
+                                        Identificación
+                                    </div>
+                                </th>
+                                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
+                                    <div className="font-semibold text-left">
                                         Nombre
                                     </div>
                                 </th>
                                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                                     <div className="font-semibold text-left">
-                                        Descripción
+                                        Apellido
+                                    </div>
+                                </th>
+                                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
+                                    <div className="font-semibold text-left">
+                                        Correo Electrónico
+                                    </div>
+                                </th>
+                                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
+                                    <div className="font-semibold text-left">
+                                        Célular
                                     </div>
                                 </th>
                                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
@@ -44,37 +64,14 @@ const ConnectionsTable = ({ connections }) => {
                                 </th>
                                 <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
                                     <div className="font-semibold text-left">
-                                        Número de Contrato
-                                    </div>
-                                </th>
-                                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                                    <div className="font-semibold text-left">
-                                        Número de Medidor
-                                    </div>
-                                </th>
-                                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                                    <div className="font-semibold text-left">
-                                        Propietario
-                                    </div>
-                                </th>
-                                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                                    <div className="font-semibold text-left">
-                                        Contacto
-                                    </div>
-                                </th>
-                                <th className="px-2 first:pl-5 last:pr-5 py-3 whitespace-nowrap">
-                                    <div className="font-semibold text-left">
                                         Acciones
                                     </div>
                                 </th>
                             </tr>
                         </thead>
                         <tbody className="text-sm">
-                            {connections.map((connection) => (
-                                <ConnectionsTableItem
-                                    key={connection.id}
-                                    connection={connection}
-                                />
+                            {owners.map((owner) => (
+                                <OwnersTableItem key={owner.id} owner={owner} />
                             ))}
                         </tbody>
                     </table>
@@ -83,4 +80,4 @@ const ConnectionsTable = ({ connections }) => {
         </div>
     )
 }
-export default ConnectionsTable
+export default OwnersTable

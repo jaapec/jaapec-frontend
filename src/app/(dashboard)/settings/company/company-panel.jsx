@@ -1,12 +1,8 @@
 'use client'
-
-import { useState } from 'react'
 import Image from 'next/image'
 import AccountImage from '@/images/user-avatar-80.png'
 
 export default function AccountPanel() {
-    const [sync, setSync] = useState(false)
-
     return (
         <div className="grow">
             {/* Panel body */}
@@ -230,7 +226,7 @@ export default function AccountPanel() {
                             Cancel
                         </button>
                         <button className="btn bg-gray-900 text-gray-100 hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-800 dark:hover:bg-white ml-3">
-                            Save Changes
+                            Guardar Cambios
                         </button>
                     </div>
                 </div>
