@@ -1,9 +1,9 @@
 'use client'
 
 import { useItemSelection } from '@/components/utils/use-item-selection'
-import OrdersTableItem from './orders-table-item'
+import ZonesTableItem from './zones-table-item'
 
-export default function OrdersTable({ orders }) {
+export default function ZonesTable({ orders }) {
     const {
         selectedItems,
         isAllSelected,
@@ -73,7 +73,7 @@ export default function OrdersTable({ orders }) {
                         {/* Table body */}
                         <tbody className="text-sm">
                             {orders.map((order) => (
-                                <OrdersTableItem
+                                <ZonesTableItem
                                     key={order.id}
                                     order={order}
                                     onCheckboxChange={handleCheckboxChange}

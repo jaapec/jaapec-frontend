@@ -82,7 +82,7 @@ export default function Sidebar({ variant = 'default' }) {
                 leaveTo="-translate-x-full"
             >
                 {/* Sidebar header */}
-                <div className="flex justify-between mb-10 pr-3 sm:px-2">
+                <div className="flex justify-center mb-10 pr-3 sm:px-2">
                     {/* Close button */}
                     <button
                         className="lg:hidden text-gray-500 hover:text-gray-400"
@@ -100,8 +100,9 @@ export default function Sidebar({ variant = 'default' }) {
                         </svg>
                     </button>
                     {/* Logo */}
-                    <Logo />
-                    <span>JAAP EC</span>
+                    <div style={{ maxWidth: '100px' }}>
+                        <Logo />
+                    </div>
                 </div>
 
                 {/* Links */}

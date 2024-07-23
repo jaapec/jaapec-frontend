@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-export const OrdersProperties = () => {
+export const ZonesProperties = () => {
     const [descriptionOpen, setDescriptionOpen] = useState(false)
 
     const statusColor = (status) => {

@@ -1,6 +1,6 @@
-import { OrdersProperties } from './orders-properties'
+import { ZonesProperties } from './zones-properties'
 
-export default function OrdersTableItem({
+export default function ZonesTableItem({
     order,
     onCheckboxChange,
     isSelected,
@@ -9,7 +9,7 @@ export default function OrdersTableItem({
         onCheckboxChange(order.id, e.target.checked)
     }
 
-    const { statusColor } = OrdersProperties()
+    const { statusColor } = ZonesProperties()
 
     return (
         <>
