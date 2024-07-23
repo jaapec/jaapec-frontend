@@ -1,7 +1,6 @@
 'use client'
 
 import { createContext, useContext, useState } from 'react'
-import { Transaction } from './transactions-table'
 
 const TransactionDetailContext = createContext(undefined)
 
