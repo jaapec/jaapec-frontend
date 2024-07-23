@@ -100,7 +100,7 @@ export default function Sidebar({ variant = 'default' }) {
                         </svg>
                     </button>
                     {/* Logo */}
-                    <div style={{ maxWidth: '100px' }}>
+                    <div style={{ maxWidth: '150px' }}>
                         <Logo />
                     </div>
                 </div>
